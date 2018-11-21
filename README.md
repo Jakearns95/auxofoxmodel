@@ -21,7 +21,7 @@ Our Minimal Viable Product (MVP) will be a model that predicts shrinkage on an a
 
      a.	Add APIs for Chicago and MKE to model and check predictability
   
-     b.	Scrape police call logs for each store’s location of operation.  This will need to be built to automatically scrape           the data every time the data set is updated (minute, hour, day, etc). 
+     b.	Scrape police call logs for each store’s location of operation.  This will need to be built to automatically scrape           the data every time the data set is updated (minute, hour, day, etc). See file "Location of Crime Data" for all               cities we require data from
 
 4.	Continue to add attributes
 
