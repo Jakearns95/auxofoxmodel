@@ -6,22 +6,22 @@ Our Minimal Viable Product (MVP) will be a model that predicts shrinkage on an a
 
 1.	Import and clean all data sources
 
-  a.	Unzip and change file type for all internal data provided from partner
+     a.	Unzip and change file type for all internal data provided from partner
   
-  b.	Consolidate and clean internal data sources (index: Store number)
+     b.	Consolidate and clean internal data sources (index: Store number)
   
-  c.	Clean and consolidate UCR data sources (index: Location and zipcode)
+     c.	Clean and consolidate UCR data sources (index: Location and zipcode)
   
-  d.	Clean and consolidate Census level data (index: Zipcode and census code)
+      d.	Clean and consolidate Census level data (index: Zipcode and census code)
   
 
 2.	Build an initial OLS regression model based on historical and employee turnover data
 
 3.	Determine value added predictability police call logs add to model
 
-  a.	Add APIs for Chicago and MKE to model and check predictability
+     a.	Add APIs for Chicago and MKE to model and check predictability
   
-  b.	Scrape police call logs for each store’s location of operation.  This will need to be built to automatically scrape the       data every time the data set is updated (minute, hour, day, etc). 
+     b.	Scrape police call logs for each store’s location of operation.  This will need to be built to automatically scrape           the data every time the data set is updated (minute, hour, day, etc). 
 
 4.	Continue to add attributes
 
