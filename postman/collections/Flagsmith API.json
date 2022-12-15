@@ -1,0 +1,227 @@
+{
+	"info": {
+		"_postman_id": "bfb74499-cdca-49e0-87ca-63565e810bc7",
+		"name": "Flagsmith API",
+		"description": "Contact Support:\n Email: support@flagsmith.com",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "19219509-bfb74499-cdca-49e0-87ca-63565e810bc7"
+	},
+	"item": [
+		{
+			"name": "SDK",
+			"item": [
+				{
+					"name": "Get Flags",
+					"id": "5c1d54df-93b1-4298-be74-b5dceab5b712",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/flags/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"flags",
+								""
+							]
+						},
+						"description": "USING THIS ENDPOINT WITH AN IDENTIFIER IS DEPRECATED.\nPlease use `/identities/?identifier=<identifier>` instead."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Flags for an Identity",
+					"id": "f6765949-eea9-4c20-bab5-1d1522a41021",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/identities/?identifier={{Identity}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"identities",
+								""
+							],
+							"query": [
+								{
+									"key": "identifier",
+									"value": "{{Identity}}"
+								}
+							]
+						},
+						"description": "USING THIS ENDPOINT WITH AN IDENTIFIER IS DEPRECATED.\nPlease use `/identities/?identifier=<identifier>` instead."
+					},
+					"response": []
+				},
+				{
+					"name": "Send Identity with Traits and receive Flags",
+					"id": "47028c2a-9105-4d36-b1e8-8282dc771ebf",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"identifier\":\"do_it_all_in_one_go_identity\",\n    \"traits\": [\n        {\n            \"trait_key\": \"my_trait_key\",\n            \"trait_value\": 123.5\n        },\n        {\n            \"trait_key\": \"my_other_key\",\n            \"trait_value\": true\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/identities/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"identities",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Traits - Bulk Create",
+					"id": "119c8ae1-6e78-4121-a5d5-edd2e015cdd6",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[{\n  \"identity\": {\n    \"identifier\": \"{{Identity}}\"\n  },\n  \"trait_key\": \"opening_book_sentence\",\n  \"trait_value\": \"Call me Ishmael\"\n},{\n  \"identity\": {\n    \"identifier\": \"{{Identity}}\"\n  },\n  \"trait_key\": \"universe_integer\",\n  \"trait_value\": 42\n},{\n  \"identity\": {\n    \"identifier\": \"{{Identity}}\"\n  },\n  \"trait_key\": \"floatingpoint_trait\",\n  \"trait_value\": 3.1415\n\n}]"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/traits/bulk/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"traits",
+								"bulk",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Traits - Create",
+					"id": "9568a256-cdd9-472d-a323-562b6a3f929a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"identity\": {\n        \"identifier\": \"{{Identity}}\"\n    },\n    \"trait_key\": \"tempor_laboris\",\n    \"trait_value\": \"id sit aliquip vo\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/traits/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"traits",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "2f45e416-5d91-4dab-b0e0-2477fd2f8380"
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "{{Flagsmith Environment Key}}",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "x-environment-key",
+				"type": "string"
+			},
+			{
+				"key": "in",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "2a464641-aabe-4e5e-a9e8-827e9d67d970",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "720c7e5a-c1f3-4229-97e1-f1e661d2f002",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "b71736d8-2912-4374-ba86-d36a448469b3",
+			"key": "baseUrl",
+			"value": "http://api.flagsmith.com/api/v1"
+		},
+		{
+			"id": "9507c2af-4b45-4628-b5e9-d2388db8a4e7",
+			"key": "Identity",
+			"value": "demo_user_1234"
+		},
+		{
+			"id": "d454ff43-8edf-42e1-b10a-d444c95eced9",
+			"key": "trait_key",
+			"value": "age"
+		},
+		{
+			"id": "becd4e1b-de76-4a75-a308-290b7a4a9193",
+			"key": "Flagsmith Environment Key",
+			"value": "8KzETdDeMY7xkqkSkY3Gsg"
+		}
+	]
+}

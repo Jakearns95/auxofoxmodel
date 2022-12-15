@@ -5,6 +5,7 @@ id = f8c8052e-b3ee-4453-9a38-075934e46fee
 
 [relations.collections]
 rootDirectory = postman/collections
+files[] = {"id":"19219509-bfb74499-cdca-49e0-87ca-63565e810bc7","path":"Flagsmith API.json","metaData":{}}
 
 [relations.collections.metaData]
 
